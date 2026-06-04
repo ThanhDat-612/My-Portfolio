@@ -1,0 +1,58 @@
+body{
+    margin:0;
+    font-family:'Be Vietnam Pro',sans-serif;
+    background:#f4f4f4;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+}
+
+.login-box{
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+.login-box h1{
+    text-align:center;
+    color:#a551f5;
+}
+
+.login-box form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.login-box input{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.login-box button{
+    padding:12px;
+    border:none;
+    background:#a551f5;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    opacity:.9;
+}
+
+.login-box a{
+    display:block;
+    margin-top:15px;
+    text-align:center;
+    text-decoration:none;
+}
+
+
