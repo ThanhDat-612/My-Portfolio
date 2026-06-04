@@ -5,72 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<div class="dashboard">
+<div class="dashboard-container">
 
-    <aside class="sidebar">
-        <h2>Admin</h2>
+    <!-- Navigation Float -->
+    <nav class="nav-float">
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <a href="#" class="nav-item active" data-section="dashboard">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-section="projects">
+                <i class="fas fa-folder"></i>
+                <span>Dự án</span>
+            </a>
+            <a href="#" class="nav-item" data-section="skills">
+                <i class="fas fa-star"></i>
+                <span>Kỹ năng</span>
+            </a>
+            <a href="#" class="nav-item" data-section="certificates">
+                <i class="fas fa-award"></i>
+                <span>Chứng chỉ</span>
+            </a>
+            <a href="#" class="nav-item logout" data-section="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Đăng xuất</span>
+            </a>
+        </div>
+    </nav>
 
-        <ul>
-            <li>Dashboard</li>
-            <li>Dự án</li>
-            <li>Kỹ năng</li>
-            <li>Chứng chỉ</li>
-            <li>Đăng xuất</li>
-        </ul>
-    </aside>
+    <!-- Main Content -->
+    <main class="main-content">
 
-    <main class="content">
-
-        <header>
-            <h1>Trang quản trị Portfolio</h1>
+        <!-- Header -->
+        <header class="header-section">
+            <div class="header-content">
+                <h1>Trang quản trị </h1>
+                <p>Quản lý thông tin cá nhân và dự án</p>
+            </div>
+            <img src="../pics/avt.png" alt="Avatar" class="header-avatar">
         </header>
 
-        <section class="cards">
-
-            <div class="card">
-                <h3>Dự án</h3>
-                <p>5 dự án</p>
+        <!-- Stats Cards in Unique Layout -->
+        <section class="stats-section">
+            <div class="stat-card large">
+                <div class="stat-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>5</h3>
+                    <p>Dự án</p>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Kỹ năng</h3>
-                <p>12 kỹ năng</p>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>12</h3>
+                    <p>Kỹ năng</p>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Chứng chỉ</h3>
-                <p>2 chứng chỉ</p>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>2</h3>
+                    <p>Chứng chỉ</p>
+                </div>
             </div>
-
         </section>
 
-        <section class="project-table">
+        <!-- Projects Table Section -->
+        <section class="table-section">
+            <div class="section-header">
+                <h2>Danh sách dự án</h2>
+                <button class="btn-add">
+                    <i class="fas fa-plus"></i> Thêm dự án
+                </button>
+            </div>
 
-            <h2>Danh sách dự án</h2>
+            <table class="projects-table">
+                <thead>
+                    <tr>
+                        <th>Tên dự án</th>
+                        <th>Công nghệ</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Portfolio Website</td>
+                        <td><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span></td>
+                        <td><span class="status completed">Hoàn thành</span></td>
+                        <td class="actions">
+                            <button class="btn-icon edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete" title="Xóa"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
 
-            <table>
-                <tr>
-                    <th>Tên dự án</th>
-                    <th>Công nghệ</th>
-                    <th>Trạng thái</th>
-                </tr>
-
-                <tr>
-                    <td>Portfolio Website</td>
-                    <td>HTML, CSS</td>
-                    <td>Hoàn thành</td>
-                </tr>
-
-                <tr>
-                    <td>Shop Website</td>
-                    <td>PHP, MySQL</td>
-                    <td>Đang phát triển</td>
-                </tr>
+                    <tr>
+                        <td>Shop Website</td>
+                        <td><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span></td>
+                        <td><span class="status developing">Đang phát triển</span></td>
+                        <td class="actions">
+                            <button class="btn-icon edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete" title="Xóa"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-
         </section>
 
     </main>

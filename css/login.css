@@ -1,58 +1,237 @@
-body{
-    margin:0;
-    font-family:'Be Vietnam Pro',sans-serif;
-    background:#f4f4f4;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    height:100vh;
+:root {
+    --primary-color: #a551f5;
+    --secondary-color: #8e3fbf;
+    --background-color: #f4f4f4;
+    --surface-color: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #999999;
+    
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 20px;
+    
+    --border-radius-md: 8px;
+    --border-radius-lg: 10px;
+    
+    --spacing-md: 12px;
+    --spacing-lg: 15px;
+    --spacing-xl: 20px;
 }
 
-.login-box{
-    width:350px;
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,.1);
+body {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--spacing-md);
 }
 
-.login-box h1{
-    text-align:center;
-    color:#a551f5;
+.login-box {
+    width: 350px;
+    background: var(--surface-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.login-box form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.login-box h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 600;
 }
 
-.login-box input{
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:8px;
+.login-box h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 600;
 }
 
-.login-box button{
-    padding:12px;
-    border:none;
-    background:#a551f5;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
+/* Dog Area - Flexbox Layout */
+.dog-area {
+    width: 100%;
+    height: 120px;
+    background: var(--background-color);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.login-box button:hover{
-    opacity:.9;
+.bg {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url("../pics/bg.webp") repeat-x;
+    background-size: cover;
+    background-position: 0px -165px;
 }
 
-.login-box a{
-    display:block;
-    margin-top:15px;
-    text-align:center;
-    text-decoration:none;
+#dog {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+    z-index: 1;
 }
 
+/* Form - Flexbox */
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
 
+.login-box input {
+    padding: var(--spacing-md);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(165, 81, 245, 0.2);
+}
+
+.login-box input::placeholder {
+    color: var(--text-light);
+}
+
+.login-box button {
+    padding: var(--spacing-md);
+    border: none;
+    background: var(--primary-color);
+    color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-box button:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(165, 81, 245, 0.3);
+    transform: translateY(-2px);
+}
+
+.login-box button:active {
+    transform: translateY(0);
+}
+
+.login-box a {
+    display: block;
+    margin-top: var(--spacing-lg);
+    text-align: center;
+    text-decoration: none;
+    color: var(--surface-color);
+}
+
+.register {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.register a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+/* ============ RESPONSIVE DESKTOP (≥ 1024px) ============ */
+@media (width >= 1024px) {
+    .login-box {
+        width: 350px;
+    }
+
+    body {
+        padding: var(--spacing-xl);
+    }
+}
+
+/* ============ RESPONSIVE TABLET (768px ≤ Width < 1024px) ============ */
+@media (768px <= width < 1024px) {
+    .login-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .login-box h1,
+    .login-box h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    body {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ============ RESPONSIVE MOBILE (Width < 768px) ============ */
+@media (width < 768px) {
+    body {
+        padding: var(--spacing-lg);
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 350px;
+        padding: var(--spacing-xl);
+    }
+
+    .login-box h1,
+    .login-box h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .dog-area {
+        height: 100px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    #dog {
+        width: 70px;
+    }
+
+    .login-box form {
+        gap: var(--spacing-md);
+    }
+
+    .login-box input,
+    .login-box button {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+
+    .register {
+        font-size: var(--font-size-sm);
+        margin-top: var(--spacing-lg);
+    }
+}

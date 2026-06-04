@@ -1,70 +1,68 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #1cc88a;
+    --background-color: #f5f7fb;
+    --surface-color: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #999999;
+    
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 20px;
+    
+    --border-radius-md: 5px;
+    --border-radius-lg: 10px;
+    
+    --spacing-md: 8px;
+    --spacing-lg: 10px;
+    --spacing-xl: 30px;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: var(--spacing-lg);
 }
 
 .login-box {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: var(--surface-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     width: 300px;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4e73df;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #2e59d9;
-}
-
-.register {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-}
+/* Dog Area - Flexbox */
 .dog-area {
     width: 100%;
     height: 120px;
-    background: #f0f0f0;
+    background: var(--background-color);
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: var(--border-radius-lg);
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .bg {
     position: absolute;
     width: 200%;
     height: 100%;
-    background: url("pics/bg.webp") repeat-x;
+    background: url("../pics/bg.webp") repeat-x;
     background-size: cover;
     background-position: 0px -165px;
 }
+
 #dog {
     width: 80px;
     position: absolute;
@@ -72,4 +70,145 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.3s ease;
+    z-index: 1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-color);
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+}
+
+/* Form - Flexbox */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: var(--border-radius-md);
+    border: 1px solid #ccc;
+    font-size: var(--font-size-base);
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(78, 115, 223, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2e59d9;
+    box-shadow: 0 4px 12px rgba(78, 115, 223, 0.3);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.register {
+    text-align: center;
+    margin-top: 10px;
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.register a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+/* ============ RESPONSIVE DESKTOP (≥ 1024px) ============ */
+@media (width >= 1024px) {
+    .login-box {
+        width: 300px;
+    }
+}
+
+/* ============ RESPONSIVE TABLET (768px ≤ Width < 1024px) ============ */
+@media (768px <= width < 1024px) {
+    .login-box {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    body {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ============ RESPONSIVE MOBILE (Width < 768px) ============ */
+@media (width < 768px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 300px;
+        padding: var(--spacing-xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .dog-area {
+        height: 100px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    #dog {
+        width: 70px;
+    }
+
+    input {
+        padding: 8px;
+        margin: 6px 0;
+        font-size: var(--font-size-base);
+    }
+
+    button {
+        padding: 8px;
+        font-size: var(--font-size-base);
+    }
+
+    .register {
+        font-size: var(--font-size-sm);
+        margin-top: var(--spacing-lg);
+    }
 }
