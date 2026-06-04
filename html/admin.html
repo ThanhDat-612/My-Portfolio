@@ -85,7 +85,7 @@
             </div>
         </section>
 
-        <!-- Projects Table Section -->
+        <!-- Projects Section -->
         <section class="table-section">
             <div class="section-header">
                 <h2>Danh sách dự án</h2>
@@ -94,37 +94,43 @@
                 </button>
             </div>
 
-            <table class="projects-table">
-                <thead>
-                    <tr>
-                        <th>Tên dự án</th>
-                        <th>Công nghệ</th>
-                        <th>Trạng thái</th>
-                        <th>Hành động</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Portfolio Website</td>
-                        <td><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span></td>
-                        <td><span class="status completed">Hoàn thành</span></td>
-                        <td class="actions">
-                            <button class="btn-icon edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
-                            <button class="btn-icon delete" title="Xóa"><i class="fas fa-trash"></i></button>
-                        </td>
-                    </tr>
+            <div class="projects-list">
+                <div class="project-card">
+                    <div class="project-left">
+                        <h3>Portfolio Website</h3>
+                        <p>Trang portfolio cá nhân được xây dựng bằng HTML, CSS thuần. Thiết kế responsive, trình bày kỹ năng và thông tin cá nhân</p>
+                        <p class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span></p>
+                    </div>
+                    <div class="project-right">
+                        <img src="../pics/portfolio.png" alt="Portfolio Website" class="project-image">
+                        <a href="https://truongthanhdat-portfolio.vercel.app/" class="project-link" target="_blank">Xem dự án</a>
+                    </div>
+                </div>
 
-                    <tr>
-                        <td>Shop Website</td>
-                        <td><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span></td>
-                        <td><span class="status developing">Đang phát triển</span></td>
-                        <td class="actions">
-                            <button class="btn-icon edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
-                            <button class="btn-icon delete" title="Xóa"><i class="fas fa-trash"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <div class="project-card">
+                    <div class="project-left">
+                        <h3>Honkai Starrail DB</h3>
+                        <p>Trang web tra cứu thông tin về các nhân vật và vũ khí trong trò chơi Honkai Starrail.</p>
+                        <p class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">MongoDB</span></p>
+                    </div>
+                    <div class="project-right">
+                        <img src="../pics/honkaidb.png" alt="Honkai Starrail DB" class="project-image">
+                        <a href="https://honkai-db.vercel.app/" class="project-link" target="_blank">Xem dự án</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-left">
+                        <h3>Shop Bán Hàng</h3>
+                        <p>Website bán hàng cơ bản phục vụ mục đích học tập.</p>
+                        <p class="tech-tags"><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span></p>
+                    </div>
+                    <div class="project-right">
+                        <img src="../pics/shopweb.png" alt="Shop Bán Hàng" class="project-image">
+                        <a href="#" class="project-link">Xem dự án</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>

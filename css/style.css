@@ -69,16 +69,6 @@ header h1 {
     animation: slideDown 0.6s ease-out;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* Navigation Menu - FLEXBOX */
 .menu {
@@ -256,11 +246,7 @@ section h2 {
 }
 
 /* ============ PROJECTS SECTION - CSS GRID ============ */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-xl);
-}
+
 
 .project-card {
     border: 1px solid var(--border-color);
@@ -270,12 +256,29 @@ section h2 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xl);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-right {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .project-card h3 {
@@ -307,7 +310,43 @@ section h2 {
     border-radius: 20px;
 }
 
+.project-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.2);
+}
+
+.project-link {
+    color: white;
+    background: var(--primary-color);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-base);
+}
+
+.project-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
 /* ============ CONTACT SECTION ============ */
+
+#contact {
+    background: #e8ebbe;
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+}
+
 #contact > p {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
@@ -411,6 +450,10 @@ footer {
         gap: var(--spacing-lg);
     }
 
+    .project-image {
+        max-width: 280px;
+    }
+
     .avatar {
         width: 140px;
         height: 140px;
@@ -503,10 +546,25 @@ footer {
 
     .project-card {
         padding: var(--spacing-lg);
+        flex-direction: column;
+        gap: var(--spacing-md);
     }
 
     .project-card h3 {
         font-size: var(--font-size-lg);
+    }
+
+    .project-right {
+        align-items: stretch;
+    }
+
+    .project-image {
+        max-width: 100%;
+    }
+
+    .project-link {
+        width: 100%;
+        text-align: center;
     }
 
     .tech-tags {
@@ -517,6 +575,24 @@ footer {
     .tech-tags span {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 11px;
+    }
+
+    .project-image {
+        max-width: 220px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .project-right {
+        align-items: stretch;
+    }
+
+    .project-link {
+        width: 100%;
+        text-align: center;
     }
 
     .contact-list {
