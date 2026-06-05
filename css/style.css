@@ -27,6 +27,7 @@
     --border-radius-md: 8px;
     --border-radius-lg: 12px;
     --border-radius-xl: 15px;
+    --border-radius-full: 50%;
     
     --spacing-xs: 4px;
     --spacing-sm: 8px;
@@ -67,6 +68,32 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     letter-spacing: 1px;
     animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.5s ease-out both;
 }
 
 
@@ -121,16 +148,109 @@ header h1 {
 }
 
 .menu a.login-btn {
-    background: var(--surface-color);
+    /* background: var(--surface-color);
     color: var(--primary-color);
     font-weight: 700;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-}
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3); */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.menu a.login-btn:hover {
-    background: rgba(220, 238, 121, 0.95);
+    width: 150px;
+    height: 45px;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+
+    background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+    box-shadow: 6px 0 0 #00e6f6;
+
+    overflow: hidden;
+}
+.menu a.login-btn::after{
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: "|||||||||||||||||||||";
+
+   position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        45deg,
+        transparent 3%,
+        #00e6f6 3%,
+        #00e6f6 5%,
+        #ff013c 5%
+    );
+     text-shadow:
+        -2px -2px 0 #f8f005,
+         2px  2px 0 #00e6f6;
+
+    clip-path: var(--slice-0);
+}
+.menu a.login-btn:hover::after{ 
+    /* background: #d4f0e4;
     box-shadow: 0 6px 16px rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px);
+    transform: translateY(-3px); */
+    animation: glitch 1s steps(2, end);
+}
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, -5px);
+    }
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 5px);
+    }
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-5px, 5px);
+    }
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0, 3px);
+    }
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-3px, 0);
+    }
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(3px, 0);
+    }
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(3px, 5px);
+    }
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 5px);
+    }
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(10px, -5px);
+    }
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-5px, 0);
+    }
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
 }
 
 /* ============ SECTIONS ============ */
@@ -342,7 +462,7 @@ section h2 {
 /* ============ CONTACT SECTION ============ */
 
 #contact {
-    background: #e8ebbe;
+    background: #eef2ff;
     padding: var(--spacing-2xl);
     border-radius: var(--border-radius-lg);
 }
@@ -579,20 +699,6 @@ footer {
 
     .project-image {
         max-width: 220px;
-    }
-
-    .project-card {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .project-right {
-        align-items: stretch;
-    }
-
-    .project-link {
-        width: 100%;
-        text-align: center;
     }
 
     .contact-list {
