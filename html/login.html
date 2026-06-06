@@ -17,13 +17,20 @@
     </div>
 
     <h2>Đăng nhập</h2>
-    <form action="login.php" method="POST">
-        <input type="text" name="username" placeholder="Tên đăng nhập" required>
-        <input type="password" name="password" placeholder="Mật khẩu" required>
+    <div class="login">
+        <div class="input-group">
+            <img src="../pics/account.png" alt="login-icon" class="icon">
+            <input type="text" name="username" placeholder="Tên đăng nhập" required>
+        </div>
+        <div class="input-group">
+            <img src="../pics/password.png" alt="password-icon" class="icon">
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+        </div>
+
         <button type="submit">
             <a href="admin.html" target="_blank">Đăng nhập</a>
         </button>
-    </form>
+    </div>
 
     <div class="register">
         Chưa có tài khoản? <a href="register.html">Đăng ký</a>

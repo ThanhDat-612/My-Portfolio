@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Playwrite+AU+VIC+Guides&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC+Guides&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Portfolio</title>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>My Portfolio</h1>
+            <!-- <h1>My Portfolio</h1> -->
+            <h1 class="wave-text">
+                <span style="--i:1">M</span>
+                <span style="--i:2">y</span>
+                <span style="--i:3">&nbsp;</span>
+                <span style="--i:4">P</span>
+                <span style="--i:5">o</span>
+                <span style="--i:6">r</span>
+                <span style="--i:7">t</span>
+                <span style="--i:8">f</span>
+                <span style="--i:9">o</span>
+                <span style="--i:10">l</span>
+                <span style="--i:11">i</span>
+                <span style="--i:1">o</span>
+            </h1>
             <nav>
                 <ul class="menu">
                     <li><a href="#home">Trang chủ</a></li>
@@ -26,15 +42,25 @@
         <section id="home">
             <img src="pics/avt.png" alt="avt" class="avatar">
             <h2>Welcome to My Portfolio</h2>
-            <p class="tagline">Sinh viên Công nghệ thông tin — Đam mê lập trình web và phát triển phần mềm.</p>
+            <p class="tagline">Sinh viên Công nghệ thông tin</p>
+            <p class="tagline">Đam mê lập trình web và phát triển phần mềm</p>
         </section>
 
         <section id="about">
             <h2>Giới thiệu</h2>
-            <p> Trương Thành Đạt</p>
-            <p>Ngày sinh: 06/12/2006</p>
-            <p> Sinh viên năm 2 ngành Công nghệ Thông tin tại Trường Đại học Giao Thông Vận Tải TP.HCM</p>
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <p class="name">Trương Thành Đạt</p>
+                    <p><b>Ngày sinh:</b> 06/12/2006</p>
+                    <p> Sinh viên năm 2 chuyên ngành Công nghệ Thông tin tại Trường Đại học Giao Thông Vận Tải TP.HCM</p>
+                </div>
+
+                <div class="about-logo">
+                    <img src="pics/Logo_UTH.png" alt="Logo UTH" class="about-logo-img">
+                </div>
+            </div>
         </section>
+
 
         <section id="skills">
             <h2>Kỹ năng</h2>
@@ -59,7 +85,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3>Backend</h3>
+                    <h3 >Backend</h3>
                     <ul>
                         <li>PHP</li>
                         <li>MongoDB</li>
@@ -68,7 +94,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3>Công cụ</h3>
+                    <h3 >Công cụ</h3>
                     <ul>
                         <li>Git / GitHub</li>
                         <li>Visual Studio Code</li>
@@ -82,7 +108,7 @@
         <section id="certificates">
             <h2>Chứng chỉ</h2>
             <ul class="cert-list">
-                <li>MOS Word - Excel - PowerPoint</li>
+                <li>MOS Word - Excel - PowerPoint (2022)</li>
                 <li>Chứng chỉ lập trình viên Java — HCMUS</li>
             </ul>
         </section>
@@ -125,6 +151,18 @@
                 </div>
             </div>
 
+            <div class="project-card">
+                <div  class="project-left">
+                    <h3>Web Con Chó</h3>
+                    <p>Website dùng để test chức năng / nháp cho các web khác.</p>
+                    <p class="tech-tags">ALL</p>
+                </div>
+                <div class="project-right">
+                    <img src="pics/dog.png" atl="Web Con Chó" class="project-image">
+                    <a href="https://login-test-gold-two.vercel.app/login" class="project-link">Xem dự án</a>
+                </div>
+            </div>
+
         </section>
 
         <section id="contact">
@@ -134,11 +172,12 @@
                 <li>Email: <a href="mailto:datviproo6a5@gmail.com">datviproo6a5@gmail.com</a></li>
                 <li>GitHub: <a href="https://github.com/ThanhDat-612" target="_blank">github.com/ThanhDat-612</a></li>
                 <li>Facebook: <a href="https://facebook.com/truong.thanh.at.107009/" target="_blank">facebook.com/truong.thanh.at.107009/</a></li>
+                <li>Phone: (+84) 0938393453</li>
             </ul>
         </section>
 
         <footer>
-            <p>© 2026 My Portfolio</p>
+            <p>&copy; 2026 My Portfolio</p>
         </footer>
     </div>
 </body>
