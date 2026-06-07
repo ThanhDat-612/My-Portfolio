@@ -335,10 +335,11 @@ section h2 {
 }
 
 #about .name{
-    font-family: "Fleur De Leah", cursive;
-    font-weight: 550;
+    font-family: "Allura", cursive;
+    font-weight: 500;
     font-style: normal;
-    font-size: var(--font-size-5xl);
+    /* font-size: var(--font-size-5xl); */
+    font-size: 50px;
 }
 
 #about .about-wrapper{
@@ -458,7 +459,7 @@ section h2 {
     position: absolute;
     inset: 0;
     border-radius: var(--border-radius-lg);
-    padding: 2px;
+    padding: var(--spacing-xs);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -612,7 +613,7 @@ ncr-logo{
 /* ============ RESPONSIVE DESKTOP (≥ 1024px) ============ */
 @media (width >= 1024px) {
     .container {
-        max-width: 1200px;
+        max-width: 1024px;
         padding: 0 var(--spacing-xl);
     }
 

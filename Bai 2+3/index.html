@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HOC CSS CO BAN</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="UTH Logo">
+            </div>
+
+            <div class="search">
+                <form>
+                    <input id="search" type="text" placeholder="Search...">
+                </form>
+            </div>
+
+            <div class="user">
+                <p class="name">CR7</p>
+                <img class="avt" src="avt.jpg" alt="user">
+            </div>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <img id="menu-icon" src="3soc.png" alt="menu">
+
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li class="has-submenu">
+                    <a href="services.html">Services</a>
+
+                    <ul class="sub-menu">
+                        <li><a href="#dien-thoai">Dien thoai</a></li>
+                        <li><a href="#may-tinh">May tinh</a></li>
+                        <li><a href="#">Submenu 3</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- SCRIPT MENU -->
+        <script>
+            const menuIcon = document.getElementById("menu-icon");
+            const menu = document.getElementById("menu");
+
+            menuIcon.addEventListener("click", function () {
+                menu.classList.toggle("show");
+            });
+        </script>
+
+        <!-- BANNER -->
+        <section>
+            <img src="ampho.jpg" alt="banner">
+
+            <div class="title">
+                <h2>AMPHOREUS</h2>
+            </div>
+        </section>
+
+        <!-- NEWS -->
+        <h3 class="main-title">TIN TUC THOI SU</h3>
+
+        <div class="news">
+
+            <aside>
+                <img class="news-img" src="news1.png" alt="news">
+
+                <div class="content">
+                    <p>Tin tuc noi bat</p>
+                    <p>Noi dung mo ta ngan gon cho bai viet.</p>
+                </div>
+            </aside>
+
+            <aside>
+                <img src="news1.png" alt="news">
+
+                <div class="content">
+                    <p>Tin tuc moi</p>
+                    <p>Noi dung mo ta ngan gon cho bai viet.</p>
+                </div>
+            </aside>
+
+            <aside>
+                <img src="news1.png" alt="news">
+
+                <div class="content">
+                    <p>Tin tuc cong nghe</p>
+                    <p>Noi dung mo ta ngan gon cho bai viet.</p>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- DIEN THOAI -->
+        <h3 class="main-title" id="dien-thoai">DIEN THOAI</h3>
+
+        <main>
+
+            <article>
+                <img src="dt.jpg" alt="xiaomi 17">
+
+                <div class="info">
+                    <p>XIAOMI 17</p>
+                    <p>Gia: <span class="old-price">1.200.000đ</span> 999K</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="dt.jpg" alt="iphone">
+
+                <div class="info">
+                    <p>IPHONE 15</p>
+                    <p>Gia: 25.000.000đ</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="dt.jpg" alt="samsung">
+
+                <div class="info">
+                    <p>SAMSUNG S25</p>
+                    <p>Gia: 19.000.000đ</p>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- MAY TINH -->
+        <h3 class="main-title" id="may-tinh">MAY TINH</h3>
+
+        <main>
+
+            <article>
+                <img src="dt.jpg" alt="laptop">
+
+                <div class="info">
+                    <p>LAPTOP ASUS</p>
+                    <p>Gia: 15.000.000đ</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="dt.jpg" alt="macbook">
+
+                <div class="info">
+                    <p>MACBOOK AIR</p>
+                    <p>Gia: 30.000.000đ</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="dt.jpg" alt="acer">
+
+                <div class="info">
+                    <p>ACER GAMING</p>
+                    <p>Gia: 22.000.000đ</p>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Copyright © 2026</p>
+        </footer>
+
+    </div>
+</body>
+</html>

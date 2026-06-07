@@ -3,139 +3,371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Quản Lý Portfolio</title>
 </head>
 <body>
 
-<div class="dashboard-container">
-
-    <!-- Navigation Float -->
-    <nav class="nav-float">
-        <button class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-menu" id="navMenu">
-            <a href="#" class="nav-item active" data-section="dashboard">
-                <i class="fas fa-chart-line"></i>
-                <span>Dashboard</span>
-            </a>
-            <a href="#" class="nav-item" data-section="projects">
-                <i class="fas fa-folder"></i>
-                <span>Dự án</span>
-            </a>
-            <a href="#" class="nav-item" data-section="skills">
-                <i class="fas fa-star"></i>
-                <span>Kỹ năng</span>
-            </a>
-            <a href="#" class="nav-item" data-section="certificates">
-                <i class="fas fa-award"></i>
-                <span>Chứng chỉ</span>
-            </a>
-            <a href="#" class="nav-item logout" data-section="logout">
-                <i class="fas fa-sign-out-alt"></i>
-                <span>Đăng xuất</span>
-            </a>
+    <!-- TOP BAR -->
+    <header id="admin-header">
+        <div class="admin-logo">
+            <h1>Portfolio Manager</h1>
         </div>
+        <div class="admin-info">
+            <img src="../pics/avt.png" alt="avt" class="avatar">
+            <button id="logout-btn">Đăng xuất</button>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav id="admin-nav">
+        <ul class="nav-menu">
+            <!-- Thêm liên kết đến Bảng thống kê (Tùy chọn) -->
+            <li class="nav-item"><a href="#dashboard-section">Tổng quan</a></li>
+
+            <li class="nav-item">
+                <a href="#home-section">Trang chủ</a>
+                <ul class="submenu">
+                    <li><a href="#edit-title-section">Sửa tiêu đề</a></li>
+                    <li><a href="#edit-avatar-section">Sửa ảnh đại diện</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#about-section">Giới thiệu</a>
+                <ul class="submenu">
+                    <li><a href="#personal-info-section">Thông tin cá nhân</a></li>
+                    <li><a href="#school-logo-section">Logo trường</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#skills-section">Kỹ năng</a>
+                <ul class="submenu">
+                    <li><a href="#skill-lang-section">Ngôn Ngữ Lập Trình</a></li>
+                    <li><a href="#skill-frontend-section">Frontend</a></li>
+                    <li><a href="#skill-backend-section">Backend</a></li>
+                    <li><a href="#skill-tools-section">Công cụ</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#certificates-section">Chứng chỉ</a>
+                <ul class="submenu">
+                    <li><a href="#add-certificate-section">Thêm Chứng Chỉ</a></li>
+                    <li><a href="#manage-certificates-section">Quản lý / Xóa Chứng Chỉ</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#projects-section">Dự án</a>
+                <ul class="submenu">
+                    <li><a href="#project-form-section">Thêm dự án</a></li>
+                    <li><a href="#project-management">Quản lý dự án</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#contact-section">Liên hệ</a>
+            </li>
+        </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-
-        <!-- Header -->
-        <header class="header-section">
-            <div class="header-content">
-                <h1>Trang quản trị </h1>
-                <p>Quản lý thông tin cá nhân và dự án</p>
-            </div>
-            <img src="../pics/avt.png" alt="Avatar" class="header-avatar">
-        </header>
-
-        <!-- Stats Cards in Unique Layout -->
-        <section class="stats-section">
-            <div class="stat-card large">
-                <div class="stat-icon">
-                    <i class="fas fa-project-diagram"></i>
+    <!-- MAIN CONTENT -->
+    <main id="admin-main">
+        
+        <!-- DASHBOARD (TỔNG QUAN) -->
+        <section id="dashboard-section">
+            <h2>Bảng Thống Kê</h2>
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <h3>Tổng dự án</h3>
+                    <p>4</p>
                 </div>
-                <div class="stat-content">
-                    <h3>5</h3>
-                    <p>Dự án</p>
+                <div class="dashboard-card">
+                    <h3>Kỹ năng</h3>
+                    <p>14</p>
                 </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="stat-content">
-                    <h3>12</h3>
-                    <p>Kỹ năng</p>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-medal"></i>
-                </div>
-                <div class="stat-content">
-                    <h3>2</h3>
-                    <p>Chứng chỉ</p>
+                <div class="dashboard-card">
+                    <h3>Chứng chỉ</h3>
+                    <p>2</p>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="table-section">
-            <div class="section-header">
-                <h2>Danh sách dự án</h2>
-                <button class="btn-add">
-                    <i class="fas fa-plus"></i> Thêm dự án
-                </button>
+        <!-- ================= TRANG CHỦ ================= -->
+        <section id="home-section">
+            <h2>Quản lý Trang chủ</h2>
+            
+            <!-- Sửa tiêu đề -->
+            <div id="edit-title-section" class="sub-management">
+                <h3>Sửa tiêu đề chính</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Tiêu đề chính</label>
+                        <input type="text"  id="home-main-title">
+                    </div>
+                    <div class="form-group">
+                        <label>Tiêu đề phụ</label>
+                        <input type="text" id="home-subtitle">
+                    </div>
+                    <button type="submit">Cập nhật tiêu đề</button>
+                </form>
             </div>
 
-            <div class="projects-list">
-                <div class="project-card">
-                    <div class="project-left">
-                        <h3>Portfolio Website</h3>
-                        <p>Trang portfolio cá nhân được xây dựng bằng HTML, CSS thuần. Thiết kế responsive, trình bày kỹ năng và thông tin cá nhân</p>
-                        <p class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span></p>
+            <!-- Sửa ảnh đại diện -->
+            <div id="edit-avatar-section" class="sub-management">
+                <h3>Sửa ảnh đại diện</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Chọn ảnh mới</label>
+                        <input type="file" id="home-avatar-input">
                     </div>
-                    <div class="project-right">
-                        <img src="../pics/portfolio.png" alt="Portfolio Website" class="project-image">
-                        <a href="https://truongthanhdat-portfolio.vercel.app/" class="project-link" target="_blank">Xem dự án</a>
-                    </div>
-                </div>
+                    <button type="submit">Thay đổi ảnh</button>
+                </form>
+            </div>
+        </section>
 
-                <div class="project-card">
-                    <div class="project-left">
-                        <h3>Honkai Starrail DB</h3>
-                        <p>Trang web tra cứu thông tin về các nhân vật và vũ khí trong trò chơi Honkai Starrail.</p>
-                        <p class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">MongoDB</span></p>
-                    </div>
-                    <div class="project-right">
-                        <img src="../pics/honkaidb.png" alt="Honkai Starrail DB" class="project-image">
-                        <a href="https://honkai-db.vercel.app/" class="project-link" target="_blank">Xem dự án</a>
-                    </div>
-                </div>
+        <!-- ================= GIỚI THIỆU ================= -->
+        <section id="about-section">
+            <h2>Quản lý Giới thiệu</h2>
 
-                <div class="project-card">
-                    <div class="project-left">
-                        <h3>Shop Bán Hàng</h3>
-                        <p>Website bán hàng cơ bản phục vụ mục đích học tập.</p>
-                        <p class="tech-tags"><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span></p>
+            <!-- Thông tin cá nhân -->
+            <div id="personal-info-section" class="sub-management">
+                <h3>Thông tin cá nhân</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Mô tả bản thân ngắn</label>
+                        <textarea id="about-bio-short"></textarea>
                     </div>
-                    <div class="project-right">
-                        <img src="../pics/shopweb.png" alt="Shop Bán Hàng" class="project-image">
-                        <a href="#" class="project-link">Xem dự án</a>
+                    <div class="form-group">
+                        <label>Chi tiết giới thiệu</label>
+                        <textarea id="about-bio-detail"></textarea>
+                    </div>
+                    <button type="submit">Lưu thông tin</button>
+                </form>
+            </div>
+
+            <!-- Logo trường -->
+            <div id="school-logo-section" class="sub-management">
+                <h3>Logo Trường / Nơi làm việc</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Tên trường / Tổ chức</label>
+                        <input type="text" id="school-name">
+                    </div>
+                    <div class="form-group">
+                        <label>Tải lên Logo</label>
+                        <input type="file" id="school-logo-input">
+                    </div>
+                    <button type="submit">Cập nhật logo</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= KỸ NĂNG ================= -->
+        <section id="skills-section">
+            <h2>Quản lý Kỹ năng</h2>
+
+            <div id="skill-lang-section" class="sub-management">
+                <h3>Ngôn Ngữ Lập Trình</h3>
+                <form class="skill-inline-form">
+                    <div class="form-group">
+                        <input type="text">
+                    </div>
+                    <button type="submit">Thêm</button>
+                </form>
+                <div class="skill-tag-list">
+                    <div class="skill-tag">Python <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">Java <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">C++ <span class="delete-tag">&times;</span></div>
+                </div>
+            </div>
+
+            <div id="skill-frontend-section" class="sub-management">
+                <h3>Kỹ năng Frontend</h3>
+                <form class="skill-inline-form">
+                    <div class="form-group">
+                        <input type="text">
+                    </div>
+                    <button type="submit">Thêm</button>
+                </form>
+                <div class="skill-tag-list">
+                    <div class="skill-tag">HTML / HTML5 <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">CSS / CSS3 <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">JavaScript <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">React <span class="delete-tag">&times;</span></div>
+                </div>
+            </div>
+
+            <div id="skill-backend-section" class="sub-management">
+                <h3>Kỹ năng Backend</h3>
+                <form class="skill-inline-form">
+                    <div class="form-group">
+                        <input type="text">
+                    </div>
+                    <button type="submit">Thêm</button>
+                </form>
+                <div class="skill-tag-list">
+                    <div class="skill-tag">PHP<span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">MongoDB<span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">MySQL<span class="delete-tag">&times;</span></div>
+                </div>
+            </div>
+
+            <div id="skill-tools-section" class="sub-management">
+                <h3>Công cụ sử dụng</h3>
+                <form class="skill-inline-form">
+                    <div class="form-group">
+                        <input type="text">
+                    </div>
+                    <button type="submit">Thêm</button>
+                </form>
+                <div class="skill-tag-list">
+                    <div class="skill-tag">Git / GitHub <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">Visual Studio Code <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">Eclipse <span class="delete-tag">&times;</span></div>
+                    <div class="skill-tag">Vercel <span class="delete-tag">&times;</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CHỨNG CHỈ ================= -->
+        <section id="certificates-section">
+            <h2>Quản lý Chứng chỉ</h2>
+
+            <!-- Thêm Chứng chỉ -->
+            <div id="add-certificate-section" class="sub-management">
+                <h3>Thêm Chứng Chỉ Mới</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Tên chứng chỉ</label>
+                        <input type="text" id="cert-name">
+                    </div>
+                    <div class="form-group">
+                        <label>Tổ chức cấp</label>
+                        <input type="text" id="cert-issuer">
+                    </div>
+                    <div class="form-group">
+                        <label>Hình ảnh/File đính kèm</label>
+                        <input type="file" id="cert-file">
+                    </div>
+                    <button type="submit">Tải lên chứng chỉ</button>
+                </form>
+            </div>
+
+            <!-- Quản lý / Xóa Chứng Chỉ -->
+            <div id="manage-certificates-section" class="sub-management">
+                <h3>Danh sách chứng chỉ hiện tại (Xóa)</h3>
+                <div class="project-list"> <!-- Tận dụng CSS của danh sách dự án -->
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h3>MOS Word - Excel - PowerPoint (2022)</h3>
+                            <p>Cấp bởi: Microsoft</p>
+                        </div>
+                        <div class="project-actions">
+                            <button class="delete-btn">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h3>Chứng chỉ lập trình viên Java — HCMUS</h3>
+                            <p>Cấp bởi: HCMUS</p>
+                        </div>
+                        <div class="project-actions">
+                            <button class="delete-btn">Xóa</button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- ================= DỰ ÁN ================= -->
+        <section id="projects-section">
+            <h2>Quản lý Dự án</h2>
+
+            <!-- Thêm / Sửa dự án Form -->
+            <div id="project-form-section" class="sub-management">
+                <h3>Thêm / Sửa Dự Án</h3>
+                <form id="project-form">
+                    <div class="form-group">
+                        <label>Tên dự án</label>
+                        <input type="text" id="project-name">
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        <textarea id="project-description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Công nghệ</label>
+                        <input type="text" id="project-tech">
+                    </div>
+                    <div class="form-group">
+                        <label>Link dự án</label>
+                        <input type="url" id="project-link">
+                    </div>
+                    <div class="form-group">
+                        <label>Ảnh dự án</label>
+                        <input type="file" id="project-image">
+                    </div>
+                    <button type="submit" id="save-project-btn">Lưu dự án</button>
+                </form>
+            </div>
+
+            <!-- Danh sách project (Sửa/Xóa) -->
+            <div id="project-management" class="sub-management">
+                <h3>Danh sách Dự án Hiện tại</h3>
+                <div class="project-list">
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>HTML - CSS</p>
+                        </div>
+                        <div class="project-actions">
+                            <button class="edit-btn">Sửa</button>
+                            <button class="delete-btn">Xóa</button>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h3>Honkai Starrail DB</h3>
+                            <p>React - TypeScript - MongoDB</p>
+                        </div>
+                        <div class="project-actions">
+                            <button class="edit-btn">Sửa</button>
+                            <button class="delete-btn">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LIÊN HỆ ================= -->
+        <section id="contact-section">
+            <h2>Quản lý thông tin Liên hệ</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label>Email liên hệ</label>
+                    <input type="email" id="contact-email" value="datviproo6a5@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="text" id="contact-phone" value="(+84) 0938393453">
+                </div>
+                <div class="form-group">
+                    <label>GitHub</label>
+                    <input type="url" id="contact-github" value="https://github.com/ThanhDat-612">
+                </div>
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="url" id="contact-facebook" value="https://www.facebook.com/truong.thanh.at.107009/">
+                </div>
+                <button type="submit">Lưu thông tin liên hệ</button>
+            </form>
         </section>
 
     </main>
-
-</div>
 
 </body>
 </html>

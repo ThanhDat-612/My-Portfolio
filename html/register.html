@@ -8,14 +8,37 @@
 <body>
 
 <div class="login-box">
+    <div class="dog-area">
+        <div class="bg"></div>
+        <img id="dog" src="https://cdn.dribbble.com/userupload/29122727/file/original-04ae721e0abf3f8b6cd91ea1a6803083.gif" alt="dog"> </div>
+
     <h2>Đăng ký</h2>
+
     <form action="register.php" method="POST">
-        <input type="text" name="full_name" placeholder="Họ và tên" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="username" placeholder="Tên đăng nhập" required>
-        <input type="password" name="password" placeholder="Mật khẩu" required>
-        <button type="submit">Đăng ký</button>
+        <div class="input-group">
+            <img class="icon" src="../pics/name.png" alt="name-icon"> <input type="text" name="full_name" placeholder="Họ và tên" required>
+        </div>
+
+        <div class="input-group">
+            <img class="icon" src="../pics/mail.png" alt="mail-icon">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-group">
+            <img class="icon" src="../pics/account.png" alt="login-icon">
+            <input type="text" name="username" placeholder="Tên đăng nhập" required>
+        </div>
+
+        <div class="input-group">
+            <img class="icon" src="../pics/password.png" alt="password-icon">
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+        </div>
+
+        <button type="submit">
+            <a href="javascript:void(0);" style="pointer-events: none;">Đăng ký</a>
+        </button>
     </form>
+
     <div class="register">
         Đã có tài khoản? <a href="login.html">Đăng nhập</a>
     </div>
