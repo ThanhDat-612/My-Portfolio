@@ -4,7 +4,6 @@
     --background-color: #f5f7fb;
     --surface-color: #ffffff;
     --text-secondary: #666666;
-
     --border-radius: 10px;
 }
 
@@ -24,6 +23,7 @@ body {
     padding: 20px;
 }
 
+/* Khung bọc dùng chung cho cả Login và Register */
 .login-box {
     width: 350px;
     background: var(--surface-color);
@@ -32,8 +32,7 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* ===== DOG AREA ===== */
-
+/* ===== DOG AREA (Dùng chung) ===== */
 .dog-area {
     width: 100%;
     height: 120px;
@@ -63,15 +62,13 @@ body {
 }
 
 /* ===== TITLE ===== */
-
 h2 {
     text-align: center;
     margin-bottom: 25px;
     color: var(--primary-color);
 }
 
-/* ===== INPUT ===== */
-
+/* ===== INPUT GROUPS (Dùng chung cho cả form và div thường) ===== */
 .input-group {
     position: relative;
     margin-bottom: 15px;
@@ -103,8 +100,7 @@ h2 {
     box-shadow: 0 0 6px rgba(78,115,223,0.2);
 }
 
-/* ===== BUTTON ===== */
-
+/* ===== BUTTONS (Áp dụng chung cho submit) ===== */
 button {
     width: 100%;
     height: 45px;
@@ -129,8 +125,7 @@ button a {
     font-weight: 600;
 }
 
-/* ===== REGISTER ===== */
-
+/* ===== CHUYỂN ĐỔI GIỮA ĐĂNG NHẬP / ĐĂNG KÝ ===== */
 .register {
     text-align: center;
     margin-top: 15px;
@@ -144,17 +139,41 @@ button a {
     text-decoration: underline;
 }
 
-/* ===== MOBILE ===== */
+/* =========================================================
+   =================== PHẦN RESPONSIVE =====================
+   ========================================================= */
 
-@media (max-width: 768px) {
+/* ====== THIẾT BỊ LỚN (Desktop ≥ 1024px) ====== */
+@media (min-width: 1024px) {
     .login-box {
-        width: 100%;
-        max-width: 350px;
+        width: 380px; 
+        padding: 40px;
     }
 }
 
-/* ============ RESPONSIVE DESKTOP (≥ 1024px) ============ */
+/* ====== TABLET(Width < 1024px) ====== */
+@media (max-width: 1023px) {
+    body {
+        padding: 15px; /* Giữ khoảng cách vừa phải với viền màn hình */
+    }
 
-/* ============ RESPONSIVE TABLET (768px ≤ Width < 1024px) ============ */
+    .login-box {
+        max-width: 80%; /* Giới hạn tối đa để trên tablet màn hình không bị quá bè */
+        min-width: 350px;
+        padding: 25px 20px;
+    }
 
-/* ============ RESPONSIVE MOBILE (Width < 768px) ============ */
+    .dog-area {
+        height: 100px; /* Thu nhỏ khu vực hoạt họa cho cân đối */
+        margin-bottom: 15px;
+    }
+
+    #dog {
+        width: 70px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}

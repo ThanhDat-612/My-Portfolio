@@ -345,10 +345,6 @@ input[type="file"] {
     color: var(--text-secondary);
 }
 
-input:focus, textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.12);
-}
 
 textarea {
     min-height: 100px;
@@ -370,19 +366,6 @@ button[type="submit"],
     cursor: pointer;
     transition: opacity 0.2s, box-shadow 0.2s, transform 0.1s;
     box-shadow: 0 2px 8px rgba(78, 115, 223, 0.3);
-}
-
-button[type="submit"]:hover,
-#add-project-btn:hover,
-#save-project-btn:hover {
-    opacity: 0.92;
-    box-shadow: 0 4px 14px rgba(78, 115, 223, 0.4);
-    transform: translateY(-1px);
-}
-
-button[type="submit"]:active,
-#add-project-btn:active {
-    transform: translateY(0);
 }
 
 /* ================= SKILLS ================= */
